@@ -1,0 +1,4 @@
+importFrom("graphics", "barplot", "legend", "par")
+importFrom("MASS","ginv")
+importFrom("stats", "cov", "p.adjust", "pf")
+exportPattern("^[[:alpha:]]+")

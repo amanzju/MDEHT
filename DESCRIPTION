@@ -1,0 +1,13 @@
+Package: MDEHT
+Type: Package
+Title: A multivariate approach for detecting differential expression of microRNA isoforms in RNA sequencing studies
+Version: 0.1.0
+Author: Md. Amanullah
+Maintainer: Md. Amanullah <amanzju@zju.edu.cn>
+Description: Package implementing MDEHT method to perform a multivariate differential expression by Hotelling’s test 
+  using isomiRs in small RNA-Seq data. Hotelling’s test is a generalization of Student's t- statistic and is widely
+  used for testing the difference between two multivariate means.
+License: GPL-3
+Depends: R (>= 3.3.2), MASS
+Encoding: UTF-8
+LazyData: true
