@@ -52,11 +52,11 @@ The input parameters of the main function of MDEHT as two matrices (two-sample t
 
 > data("ExampleData")
 
-#Use CPM normalization
+#use CPM normalization
 
 > NormalizedData = log2(cpm(ExampleData)+1)
 
-#Separate sample group
+#separate sample group
 
 > TumorData = NormalizedData[,grep("01A", colnames(NormalizedData))]
 
