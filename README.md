@@ -6,7 +6,7 @@ The MDEHT package executes multivariate Hotelling’s T-square test in isomiRs R
 MDEHT and isomiRseeker are free software tools that can be used by academic groups for non-commercial purpose. 
 
 ## System requirements
-> Linux/Unix or Mac OS platform 
+> Linux/Unix or Mac OS platform  
 > R (https://www.r-project.org/)  
 isomiRseeker required the following software to be installed in the user’s environment.  
 > samtools (http://www.htslib.org/download/)  
@@ -19,7 +19,7 @@ To generate an expression of isomiR from reading alignments in bam file format, 
 
 perl /path/isomiRseeker.pl -b -p output_file_name input_file.bam
 
-## Note: 
+### Note:
 Output from the above code will produce two files for each sample one is count format and another one is rpm format on your working directory. And finally, process the count/cpm data as in a matrix format for all sample for a specific disease type.
 
 ### Example
