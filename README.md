@@ -19,8 +19,7 @@ To generate an expression of isomiR from reading alignments in bam file format, 
 
 perl /path/isomiRseeker.pl -b -p output_file_name input_file.bam
 
-### Note:
-Output from the above code will produce two files for each sample one is count format and another one is rpm format on your working directory. And finally, process the count/cpm data as in a matrix format for all sample for a specific disease type.
+**Note:** Output from the above code will produce two files for each sample one is count format and another one is rpm format on your working directory. And finally, process the count/cpm data as in a matrix format for all sample for a specific disease type.
 
 ### Example
 
