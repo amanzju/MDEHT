@@ -1,4 +1,4 @@
-\name{MDEHT}
+\name{mdeht}
 \alias{MDEHT}
 \title{Multivariate Hotelling's T-square Test.}
 \usage{
