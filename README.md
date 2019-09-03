@@ -23,7 +23,7 @@ perl /path/isomiRseeker.pl -b -p output_file_name input_file.bam
 
 ### Example
 
-perl /path/isomiRseeker.pl -b -p TCGA-2F-A9KQ-01A-11R-A38M-13_mirna TCGA-2F-A9KQ-01A-11R-A38M-13_mirna.bam
+perl /path/isomiRseeker.pl -b -p sample_chr22 sample_chr22.bam
 
 ## Usage MDEHT
 The normalized of isomiRs read count expression data should be a matrix with isomiRs in rows and samples in columns. The row names should be same as our isomiRseeker tool generated isomiRs symbols. We suggest, most widely used CMP normalization method to apply in isomiRs data before run MDEHT method.  
@@ -52,7 +52,7 @@ The normalized of isomiRs read count expression data should be a matrix with iso
 > isomiR.summary(x = isomiRs)   
 > utr.summary(x = isomiRs)   
 
-> results = MDEHT (X = TumorData, Y = NormalData)  
+> results = mdeht (X = TumorData, Y = NormalData)  
 > head(results)   
 
 ## Output
