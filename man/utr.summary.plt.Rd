@@ -1,12 +1,12 @@
 \name{utr.summary.plt}
 \alias{utr.summary.plt}
-\title{Hello, World!}
+\title{UTR distribution}
 \usage{
-hello()
+utr.summary.plt(x)
 }
 \description{
 Prints 'Hello, world!'.
 }
 \examples{
-hello()
+utr.summary.plt(x = )
 }
