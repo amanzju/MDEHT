@@ -11,7 +11,7 @@
 #we have provided log2(cpm(...)+1) normalized data for X and Y
 #inohf.isomiRs: 	a logical parameter. if you want include only high frequency isoforms in a miRNA when it contains large number of isomiRs. Default FALSE
 #inohf.isomiRs.no: only used when inohf.isomiRs is TRUE and default value 25
-#merge.olf.isomRs: a logical parameter. if you want merge only low frequency isoforms as a new isoform from a miRNA when it contains large number of isomiRs. 
+#merge.olf.isomRs: a logical parameter. if you want merge only low frequency isoforms as a new isoform from a miRNA when it contains large number of isomiRs.
 #   Default FALSE
 #merge.olf.isomRs.no: only used when merge.olf.isomRs is TRUE and default value 25
 #adjp.method:	p values adjusted method. Defaults to "BH".
@@ -29,7 +29,7 @@
 
 ################# Function start    ######################
 
-MDEHT<-function(X, Y, inohf.isomiRs = FALSE, inohf.isomiRs.no = 25,
+mdeht<-function(X, Y, inohf.isomiRs = FALSE, inohf.isomiRs.no = 25,
   merge.olf.isomRs = FALSE, merge.olf.isomRs.no = 25,adjp.method="BH"){
   if(is.null(Y)){print("Peforming one sample Hotelling's T-square test")
           } else{print("Peforming two sample Hotelling's T-square test")}
@@ -41,7 +41,7 @@ MDEHT<-function(X, Y, inohf.isomiRs = FALSE, inohf.isomiRs.no = 25,
   XintYiso<-intersect(rownames(X),rownames(Y))
   X <- X[XintYiso,]
   Y <- Y[XintYiso,]
-  
+
   # extract miRNAs
   isoNamesplit<-strsplit(rownames(X),"\\|")
   miRs<-unique(sapply(isoNamesplit,function(x)x[1]))
@@ -50,7 +50,7 @@ MDEHT<-function(X, Y, inohf.isomiRs = FALSE, inohf.isomiRs.no = 25,
   for(i in 1:length(miRs)){
     echmiR<-miRs[i]
     lenmiR[i]<-length(grep(echmiR,rownames(X)))}
-    
+
   mxmiR<-max(lenmiR)
   TSS<-(ncol(X)+ncol(Y))
   assum<-mxmiR<(TSS-2)
@@ -88,7 +88,7 @@ MDEHT<-function(X, Y, inohf.isomiRs = FALSE, inohf.isomiRs.no = 25,
  ########## Hoteling Test  ###########
     pvalue<-NULL
     Tvalue<-NULL
-    
+
     for(k in 1:length(miRs)){
        mi<-miRs[k]
        dm<-as.matrix(DataMatrix[grep(mi,rownames(DataMatrix)),])
@@ -182,7 +182,7 @@ if(is.null(Y)){
   for(i1 in 1:length(miRs)){
     echmiR<-miRs[i1]
     lenmiR[i1]<-length(grep(echmiR,rownames(X)))}
-  
+
   mxmiR<-max(lenmiR)
   TSS<-ncol(X)
   assum<-mxmiR<TSS
@@ -196,7 +196,7 @@ if(is.null(Y)){
 
     pvalue<-NULL
     Tvalue<-NULL
-      
+
     for(j1 in 1:length(miRs))
       {
        mi<-miRs[j1]
@@ -213,7 +213,7 @@ if(is.null(Y)){
              }
       }else{dm<-dm}
 
- 
+
 
       #remove low friquency isoforms
        if(inohf.isomiRs){
