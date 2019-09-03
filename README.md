@@ -62,4 +62,4 @@ The output of MDEHT is a summary of putative miRNAs, including the mean values f
 
 ## Restriction of MDEHT
 MDEHT will stop when the number of isoforms in miRNA greater than n1 + n2 – 2, where n1 and n2 are sample sizes of two different group. This restriction can be released by using
-the parameter inohf.isomiRs and merge.olf.isomRs in MDEHT function. Where inohf.isomiRs: represent include only high-frequency isoforms in a miRNA when it contains a large number of isomiRs and merge.olf.isomRs: represent merge only low-frequency isoforms as a new isoform from a miRNA when it contains a large number of isomiRs. 
+the technical parameter inohf.isomiRs and merge.olf.isomRs in MDEHT function. Where inohf.isomiRs: represent include only high-frequency isoforms in a miRNA when it contains a large number of isomiRs and merge.olf.isomRs: represent merge only low-frequency isoforms as a new isoform from a miRNA when it contains a large number of isomiRs. 
