@@ -14,5 +14,5 @@ variation compaire to archetype miRNA.
 #load the dataset
 data("ExampleData")
 isomiRs = rownames(ExampleData)
-utr.summary.plt(x = isomiRs)
+utr.summary(x = isomiRs)
 }
