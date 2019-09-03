@@ -1,8 +1,8 @@
 #It will produce a distribution of 3 prime and 5 prime isomiRs compare to architype miRNA
 
-utr.summary<-function(X){
+utr.summary<-function(x){
   # extract miRNA names
-  isomiRs<-matrix(unlist(strsplit(rownames(X),"\\|")),ncol=3,byrow=TRUE)
+  isomiRs<-matrix(unlist(strsplit(x,"\\|")),ncol=3,byrow=TRUE)
   miRNAs<-names(table(isomiRs[,1]))
  # plot for the distribution of 3 UTR and 5 UTR at both side of architype miRNA
   p3UTR<-isomiRs[grep("3p",isomiRs[,1]),]
@@ -15,11 +15,6 @@ utr.summary<-function(X){
   mp2<-intersect(names(table(p3UTR[,3])),names(table(p5UTR[,3])))
   rightmatrix<-rbind(table(p3UTR[,3])[mp2],table(p5UTR[,3])[mp2])
   rightmatrix<- rightmatrix[, order(as.integer(colnames(rightmatrix)))]
-
-  # extract miRNA names from full dataset
-  IsoNo<-as.matrix(table(isomiRs[,1]))
-  rownames(IsoNo)<-gsub("\\_","",miRNAs)
-  colnames(IsoNo)<-"n.isoform"
 
   par(mfrow=c(2,1))
   barplot(leftmatrix,beside=T,col=c("greenyellow","darkorchid1"),ylab="No. of isomiRs",

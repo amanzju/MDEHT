@@ -1,7 +1,7 @@
 #It produce a distribution isoforms number in different miRNAs from raw datasets.
-isomiR.summary<-function(X){
+isomiR.summary<-function(x){
   # extract miRNA names  from selected dataset  
-  isomiR<-matrix(unlist(strsplit(rownames(X),"\\|")),ncol=3,byrow=TRUE)
+  isomiR<-matrix(unlist(strsplit(x,"\\|")),ncol=3,byrow=TRUE)
   miRNA<-names(table(isomiR[,1]))
   isoNo<-as.matrix(table(isomiR[,1]))
   rownames(isoNo)<-gsub("\\_","",miRNA)
