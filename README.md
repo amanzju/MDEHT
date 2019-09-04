@@ -8,6 +8,7 @@ MDEHT and isomiRseeker are free software tools that can be used by academic grou
 ## System requirements  
 > Linux/Unix or Mac OS platform   
 > R (https://www.r-project.org/)  
+
 isomiRseeker requires the following programs to be installed in user’s environment.  
 > samtools (http://www.htslib.org/download/)  
 > bedtools (https://bedtools.readthedocs.io/en/stable/content/installation.html)  
@@ -17,7 +18,7 @@ isomiRseeker requires the following programs to be installed in user’s environ
 ## Usage isomiRseeker 
 To generate expression data of isomiR from read alignments in the format of bam files, run the following code:
 
-perl /path/isomiRseeker.pl -b -p output_file_name input_file.bam
+> perl /path/isomiRseeker.pl -b -p output_file_name input_file.bam
 
 **Note:** The output from the above code will produce two files for each sample on your working directory, one is read counts and another one is rpm. Users need to combine read counts or rpm of all samples into a matrix before running MDETH. 
 
