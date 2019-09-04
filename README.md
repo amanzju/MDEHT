@@ -9,7 +9,7 @@ MDEHT and isomiRseeker are free software tools that can be used by academic grou
 > Linux/Unix or Mac OS platform   
 > R (https://www.r-project.org/)  
 
-isomiRseeker requires the following programs to be installed in user’s environment.  
+**isomiRseeker requires the following programs to be installed in user’s environment.**  
 > samtools (http://www.htslib.org/download/)  
 > bedtools (https://bedtools.readthedocs.io/en/stable/content/installation.html)  
 > bwa (https://github.com/lh3/bwa)  
@@ -54,7 +54,7 @@ The input file for the MDEHT is isomiR read count data in the format of matrix w
 > isomiR.summary(x = isomiRs) 
 > utr.summary(x = isomiRs)  
 
-> results = MDEHT (X = TumorData, Y = NormalData) 
+> results = MDEHT (X = TumorData, Y = NormalData)   
 > head(results) 
 
 ## Output
