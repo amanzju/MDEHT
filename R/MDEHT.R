@@ -29,7 +29,7 @@
 
 ################# Function start    ######################
 
-MDEHT<-function(X, Y, inohf.isomiRs = FALSE, inohf.isomiRs.no = 25,
+mdeht<-function(X, Y, inohf.isomiRs = FALSE, inohf.isomiRs.no = 25,
   merge.olf.isomRs = FALSE, merge.olf.isomRs.no = 25,adjp.method="BH"){
   if(is.null(Y)){print("Peforming one sample Hotelling's T-square test")
           } else{print("Peforming two sample Hotelling's T-square test")}
