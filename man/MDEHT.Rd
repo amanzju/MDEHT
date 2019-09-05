@@ -1,6 +1,6 @@
-\name{MDEHT}
-\alias{MDEHT}
-\title{Multivariate Hotelling's T-square Test.}
+\name{mdeht}
+\alias{mdeht}
+\title{Multivariate Hotelling's T-square test in isomiRs RNA-Seq data.}
 \usage{
 mdeht(X, Y, ...)
 }
