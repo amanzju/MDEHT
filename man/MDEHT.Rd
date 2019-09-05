@@ -32,7 +32,6 @@ Executes multivariate Hotelling’s T-square test in isomiRs RNA-Seq data to det
  \item{p.value:}{a vector containing the raw p-values testing differential expression for each miRNA}
  \item{adj.pval:}{a vector containing the p-values after adjusting for multiple testing using the method of Benjamini-Hochberg}
  \item{FC:}{a vector containing the estimated log fold changes for each miRNA}
-
 }
 \examples{
 ################################
