@@ -1,8 +1,8 @@
-\name{mdeht}
-\alias{mdeht}
+\name{MDEHT}
+\alias{MDEHT}
 \title{Multivariate Hotelling's T-square test in isomiRs RNA-Seq data.}
 \usage{
-mdeht(X, Y, ...)
+MDEHT(X, Y, ...)
 }
 \arguments{
 \item{X:}{ a matrix of one group (treat as tumor sample group) of RNA-Seq isomiRs counts (isomiRs are rows, samples are columns)}
@@ -40,7 +40,7 @@ install.packages("devtools")
 library(devtools)
 install_github("amanzju/MDEHT")
 library(edgeR)
-library (MDEHT)
+library(MDEHT)
 
 #load an example dataset
 data("ExampleData")
@@ -52,7 +52,7 @@ NormalizedData = log2(cpm(ExampleData)+1)
 TumorData = NormalizedData[,grep("01A", colnames(NormalizedData))]
 NormalData = NormalizedData[,grep("11A", colnames(NormalizedData))]
 
-results = mdeht (X = TumorData, Y = NormalData)
+results = MDEHT(X = TumorData, Y = NormalData)
 head(results)
 ###########################
 }
