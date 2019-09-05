@@ -5,32 +5,32 @@
 MDEHT(X, Y, ...)
 }
 \arguments{
-\item{X:}{ a matrix of one group (treat as tumor sample group) of RNA-Seq isomiRs counts (isomiRs are rows, samples are columns)}
+\item{X:}{ a matrix of isomiR read count data where rows represent isomiRs and columns represent samples (treat as tumor/case sample group)}
 
-\item{Y:}{ a matrix of another group (treat as normal sample group) of RNA-Seq isomiRs counts (isomiRs are rows, samples are columns) when Y =NULL then it will perform one sample Hotelling's test}
+\item{Y:}{ a matrix of isomiR read count data where rows represent isomiRs and columns represent samples (treat as normal/control sample group). For Y = NULL, it will executes one sample Hotelling's test}
 
-\item{inohf.isomiRs:}{ a logical parameter. if you want include only high frequency isoforms in a miRNA when it contains large number of isomiRs. Default FALSE}
+\item{inohf.isomiRs:}{ a logical parameter. include only high frequency isoforms in a miRNA when it contains large number of isomiRs. Default FALSE}
 
-\item{inohf.isomiRs.no:}{ only used when inohf.isomiRs is TRUE and default value 25}
+\item{inohf.isomiRs.no:}{ usable when inohf.isomiRs is TRUE and default value 25}
 
-\item{merge.olf.isomRs:}{a logical parameter. if you want merge only low frequency isoforms as a new isoform from a miRNA when it contains large number of isomiRs.Default FALSE}
+\item{merge.olf.isomRs:}{a logical parameter. merge only low-frequency isoforms into one group from a miRNA when it contains large number of isomiRs.Default FALSE}
 
-\item{merge.olf.isomRs.no:}{only used when merge.olf.isomRs is TRUE and default value 25 }
+\item{merge.olf.isomRs.no:}{usable when merge.olf.isomRs is TRUE and default value 25 }
 
-\item{adjp.method:}{ p values adjusted method. Defaults to "BH".}
+\item{adjp.method:}{ p value adjusted method. Default to "BH".}
 
 }
 
 \description{
-Executes multivariate Hotelling’s T-square test in isomiRs RNA-Seq data to detect differential expression miRNA. Where Hotelling’s T-square test is a generalization of Student's t- statistic and is widely used for testing the difference between two multivariate means.
+Executes multivariate Hotelling’s T-square test in isomiRs RNA-Seq data to detect differential expression miRNA. Hotelling’s T-square test is a generalization of Student's t- statistic and is widely used for testing the difference between two multivariate means. Also, Hotelling’s T-square test well controlled type I error rate and It can generate an overall conclusion even if multiple t-tests are inconsistent.
 }
 
 \value{
- \item{tumor.mean:}{a vector of mean values from tumor group}
- \item{normal.mean:}{a vector of mean values from normal group}
+ \item{X.mean:}{a vector of mean values from tumor/case group}
+ \item{Y.mean:}{a vector of mean values from normal/control group}
  \item{T.value:}{a vector of Hotellig's T-statistic values}
- \item{p.value:}{a vector containing the raw p-values testing differential expression for each miRNA}
- \item{adj.pval:}{a vector containing the p-values after adjusting for multiple testing using the method of Benjamini-Hochberg}
+ \item{p.value:}{a vector the raw p-values from testing differential expression for each miRNA}
+ \item{adj.pval:}{a vector of adjusted p-values after adjusting for multiple testing using the Benjamini-Hochberg  method}
  \item{FC:}{a vector containing the estimated log fold changes for each miRNA}
 }
 \examples{
@@ -52,7 +52,8 @@ NormalizedData = log2(cpm(ExampleData)+1)
 TumorData = NormalizedData[,grep("01A", colnames(NormalizedData))]
 NormalData = NormalizedData[,grep("11A", colnames(NormalizedData))]
 
-results = MDEHT(X = TumorData, Y = NormalData)
+results = MDEHT (X = TumorData, Y = NormalData)
 head(results)
+
 ###########################
 }
