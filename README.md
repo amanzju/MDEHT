@@ -23,7 +23,7 @@ At first, user need to download isomiRseeker folder which contain Perl script an
 **Note:** The output from the above code will produce two files for each sample on your working directory, one is read counts and another one is rpm. Users need to combine read counts or rpm of all samples into a matrix before running MDETH. 
 
 ### Example
-> perl/supplementary_data_path/isomiRseeker.pl -b -p TCGA-2F-A9KQ-01A-11R-A38M-13_mirna TCGA-2F-A9KQ-01A-11R-A38M-13_mirna.bam
+> perl /supplementary_data_path/isomiRseeker.pl -b -p TCGA-2F-A9KQ-01A-11R-A38M-13_mirna TCGA-2F-A9KQ-01A-11R-A38M-13_mirna.bam
 
 where *supplementary_data_path* represent is the path of your downloaded isomiRseeker folder i.e. the path of perl script inside of downloaded isomiRseeker folder.
 
