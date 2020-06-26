@@ -46,7 +46,7 @@ The input file for the MDEHT is isomiR read count data in the format of matrix w
 > NormalizedData = log2(cpm(ExampleData)+1) 
 
 #separate sample group  
-> s.group<-substring(colnames(NormalizedData),14,14)
+> s.group<-substring(colnames(NormalizedData),14,14)  
 > TumorData = NormalizedData[,s.group=="0"]  
 > NormalData = NormalizedData[,s.group=="1"] 
 
